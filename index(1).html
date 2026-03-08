@@ -401,7 +401,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">your.name</div>
+    <div class="nav-logo">Aswathy A S</div>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#about">About</a></li>
@@ -419,7 +419,7 @@
       <span class="badge">Computer Vision</span>
       <span class="badge">MATLAB</span>
       <span class="badge">Arduino</span>
-      <span class="badge">C++</span>
+      <span class="badge">C</span>
       <span class="badge">Python</span>
     </div>
   </div>
@@ -439,15 +439,21 @@
           <div class="project-icon">🤖</div>
           <span class="project-number">001</span>
         </div>
-        <h3>Autonomous Navigation Robot</h3>
-        <p>ROS1-based mobile robot that navigates unknown environments using SLAM, obstacle avoidance, and a custom path planning node.</p>
+        <h3>Search and Rescue Robot</h3>
+        <p>ROS1-based autonomous search and rescue robotic system for victim
+detection in disaster environments.</p>
         <div class="project-tags">
           <span class="tag">ROS1</span>
-          <span class="tag">C++</span>
+          <span class="tag">Python</span>
           <span class="tag">SLAM</span>
           <span class="tag">LiDAR</span>
+          <span class="tag">Hough Transform</span>
+          <span class="tag">Optical Flow</span>
+          <span class="tag">HSV detection</span>
+
+          
         </div>
-        <a href="project-autonomous-navigation.html" class="project-link">View Details →</a>
+        <a href="search_and_rescue.html" class="project-link">View Details →</a>
       </div>
 
       <div class="project-card" onclick="location.href='project-object-detection.html'" style="cursor:pointer">
@@ -455,15 +461,13 @@
           <div class="project-icon">👁️</div>
           <span class="project-number">002</span>
         </div>
-        <h3>Real-Time Object Detection</h3>
-        <p>Computer vision pipeline using OpenCV and a custom-trained YOLO model to detect and track objects from a live camera feed.</p>
+        <h3>Trajectory Tracking Analysis of a 2R Planar Manipulator under Different Control Strategies</h3>
+        <p>PID and Computed Torque Control Strategies to analyse the trajectory tracking performance of a 2R Planar manipulator.</p>
         <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">YOLO</span>
-          <span class="tag">ROS1</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">Control Theory</span>
         </div>
-        <a href="project-object-detection.html" class="project-link">View Details →</a>
+        <a href="trajectory_tracking_analysis.html" class="project-link">View Details →</a>
       </div>
 
       <div class="project-card" onclick="location.href='project-control-system.html'" style="cursor:pointer">
@@ -471,14 +475,14 @@
           <div class="project-icon">📐</div>
           <span class="project-number">003</span>
         </div>
-        <h3>Control System Simulation</h3>
+        <!--<h3>Control System Simulation</h3>
         <p>PID and state-space controller design and simulation for a DC motor system, with Simulink model and performance analysis.</p>
         <div class="project-tags">
           <span class="tag">MATLAB</span>
           <span class="tag">Simulink</span>
           <span class="tag">Control Theory</span>
         </div>
-        <a href="project-control-system.html" class="project-link">View Details →</a>
+        <a href="trajectory_tracking_analysis.html" class="project-link">View Details →</a>
       </div>
 
       <div class="project-card" onclick="location.href='project-sensor-array.html'" style="cursor:pointer">
@@ -489,10 +493,11 @@
         <h3>Smart Sensor Array</h3>
         <p>Arduino-based sensor fusion system combining ultrasonic, IR, and IMU data to detect proximity and orientation in real time.</p>
         <div class="project-tags">
-          <span class="tag">Arduino</span>
-          <span class="tag">C</span>
-          <span class="tag">I2C</span>
-          <span class="tag">Sensor Fusion</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Python</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">CLAHE</span>
+          <span class="tag">Optical Flow</span>
         </div>
         <a href="project-sensor-array.html" class="project-link">View Details →</a>
       </div>
@@ -501,31 +506,30 @@
         <div class="project-meta">
           <div class="project-icon">🦾</div>
           <span class="project-number">005</span>
-        </div>
-        <h3>Robotic Arm Controller</h3>
-        <p>6-DOF robotic arm controlled via ROS1 topics with inverse kinematics solved in MATLAB and executed through Arduino servo drivers.</p>
+        </div>-->
+        <h3>ARMS</h3>
+        <p>Assisted Robot for Medical Suite. A robotic arm designed for isolation wards.</p>
         <div class="project-tags">
-          <span class="tag">ROS1</span>
-          <span class="tag">MATLAB</span>
-          <span class="tag">Arduino</span>
+          <span class="tag">ESP32</span>
           <span class="tag">Kinematics</span>
+          <span class="tag">Infusion Monitoring</span>
         </div>
-        <a href="project-robotic-arm.html" class="project-link">View Details →</a>
+        <a href="ARMS.html" class="project-link">View Details →</a>
       </div>
 
-      <div class="project-card" onclick="location.href='project-lane-detection.html'" style="cursor:pointer">
+      <div class="project-card" onclick="location.href='ARMS.html'" style="cursor:pointer">
         <div class="project-meta">
           <div class="project-icon">🔍</div>
           <span class="project-number">006</span>
         </div>
-        <h3>Lane Detection System</h3>
-        <p>Vision-based lane detection for autonomous driving using Canny edge detection, Hough transforms, and perspective warping.</p>
+        <h3>IRIS</h3>
+        <p>Intelligent Recognition and Integrated Stick for Blinds. A smart blind stick which can sense obstacle, fire, water and send emergency alert.</p>
         <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Computer Vision</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">GPS</span>
+          <span class="tag">I2C</span>
         </div>
-        <a href="project-lane-detection.html" class="project-link">View Details →</a>
+        <a href="IRIS.html" class="project-link">View Details →</a>
       </div>
 
     </div>
@@ -588,15 +592,15 @@
     </p>
 
     <div class="contact-row reveal">
-      <a href="/cdn-cgi/l/email-protection#1d6472686f5d78707c7471337e7270" class="contact-btn primary">✉ Send Email</a>
-      <a href="https://github.com/yourusername" class="contact-btn" target="_blank">⌥ GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" class="contact-btn" target="_blank">in LinkedIn</a>
+      <a href="aswathysoman03@gmail.com" class="contact-btn primary">✉ Send Email</a>
+      <a href="https://github.com/aswathyaryappattu" class="contact-btn" target="_blank">⌥ GitHub</a>
+      <!-- <a href="https://linkedin.com/in/yourprofile" class="contact-btn" target="_blank">in LinkedIn</a> -->
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <span>© 2026 Your Name</span>
+    <span>© 2026 Aswathy A S</span>
     <span>Built with HTML · Hosted on GitHub Pages</span>
   </footer>
 
