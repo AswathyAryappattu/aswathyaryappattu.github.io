@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Autonomous Navigation Robot — Portfolio</title>
+  <title>Trajectory Tracking Analysis — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +30,6 @@
       min-height: 100vh;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -66,14 +65,12 @@
 
     .nav-back:hover { color: var(--text); }
 
-    /* ── MAIN LAYOUT ── */
     .page {
       max-width: 860px;
       margin: 0 auto;
       padding: 8rem 4rem 6rem;
     }
 
-    /* ── BREADCRUMB ── */
     .breadcrumb {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -84,14 +81,9 @@
       animation: fadeUp 0.5s ease forwards;
     }
 
-    .breadcrumb a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
 
-    /* ── HEADER ── */
     .project-header {
       margin-bottom: 3rem;
       opacity: 0;
@@ -108,17 +100,17 @@
     }
 
     .project-header h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
       font-weight: 300;
       letter-spacing: -0.02em;
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 1.25rem;
     }
 
     .project-header .subtitle {
       font-size: 1rem;
       color: var(--muted);
-      max-width: 600px;
+      max-width: 620px;
       line-height: 1.8;
     }
 
@@ -139,7 +131,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* ── META BAR ── */
     .meta-bar {
       display: flex;
       gap: 0;
@@ -173,7 +164,6 @@
       font-weight: 500;
     }
 
-    /* ── IMAGE PLACEHOLDER ── */
     .project-image {
       width: 100%;
       aspect-ratio: 16/9;
@@ -187,28 +177,13 @@
       margin-bottom: 3rem;
       opacity: 0;
       animation: fadeUp 0.5s ease 0.25s forwards;
-      position: relative;
       overflow: hidden;
     }
 
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .image-placeholder-text {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-align: center;
-    }
-
+    .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .image-placeholder-text { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; text-align: center; }
     .image-placeholder-icon { font-size: 2rem; }
 
-    /* ── CONTENT SECTIONS ── */
     .content-section {
       margin-bottom: 2.5rem;
       opacity: 0;
@@ -233,7 +208,6 @@
       margin-bottom: 0.85rem;
     }
 
-    /* ── FEATURE LIST ── */
     .feature-list {
       list-style: none;
       display: flex;
@@ -257,6 +231,45 @@
       font-family: var(--mono);
     }
 
+    /* ── COMPARISON TABLE ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .compare-table th {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: #faf9f7; }
+
+    .compare-table td:first-child {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .better { color: var(--accent); font-weight: 500; }
+
     /* ── RESULTS GRID ── */
     .results-grid {
       display: grid;
@@ -275,7 +288,7 @@
 
     .result-value {
       font-family: var(--mono);
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 500;
       color: var(--accent);
       display: block;
@@ -283,13 +296,42 @@
     }
 
     .result-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--muted);
       font-family: var(--mono);
       letter-spacing: 0.04em;
     }
 
-    /* ── LINKS ── */
+    /* ── TWO COLUMN ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .method-card {
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      background: var(--surface);
+    }
+
+    .method-card h3 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .method-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0 !important;
+    }
+
     .project-links {
       display: flex;
       gap: 1rem;
@@ -325,7 +367,6 @@
 
     .btn.primary:hover { background: #333; }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 4rem;
@@ -342,13 +383,11 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1.25rem 1.5rem; }
       .page { padding: 7rem 1.5rem 4rem; }
@@ -356,47 +395,44 @@
       .meta-item { border-right: none; border-bottom: 1px solid var(--border); }
       .meta-item:last-child { border-bottom: none; }
       .results-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">your.name</a>
+    <a href="index.html" class="nav-logo">Aswathy A S</a>
     <a href="index.html" class="nav-back">← Back to Projects</a>
   </nav>
 
   <div class="page">
 
-    <!-- BREADCRUMB -->
-    <p class="breadcrumb"><a href="index.html">Portfolio</a> / Projects / Autonomous Navigation Robot</p>
+    <p class="breadcrumb"><a href="index.html">Portfolio</a> / Projects / Trajectory Tracking Analysis</p>
 
-    <!-- HEADER -->
     <div class="project-header">
-      <p class="project-number">Project 001</p>
-      <h1>Autonomous Navigation Robot</h1>
-      <p class="subtitle">A ROS1-based mobile robot that navigates unknown environments autonomously using SLAM, real-time obstacle avoidance, and a custom path planning node.</p>
+      <p class="project-number">Project 002</p>
+      <h1>Trajectory Tracking Performance Analysis of a 2R Planar Manipulator Under Different Control Strategies</h1>
+      <p class="subtitle">A comparative study of model-free (PID) vs model-based (Computed Torque Control) approaches for trajectory tracking of a 2R planar robotic manipulator, simulated in MATLAB.</p>
       <div class="tag-row">
-        <span class="tag">ROS1</span>
-        <span class="tag">C++</span>
-        <span class="tag">SLAM</span>
-        <span class="tag">LiDAR</span>
-        <span class="tag">Python</span>
-        <span class="tag">Gazebo</span>
+        <span class="tag">MATLAB</span>
+        <span class="tag">PID Control</span>
+        <span class="tag">Computed Torque Control</span>
+        <span class="tag">Lagrangian Dynamics</span>
+        <span class="tag">ODE45</span>
+        <span class="tag">Feedback Linearization</span>
       </div>
     </div>
 
-    <!-- META BAR -->
     <div class="meta-bar">
       <div class="meta-item">
         <span>Status</span>
         <strong>Completed</strong>
       </div>
       <div class="meta-item">
-        <span>Duration</span>
-        <strong>3 months</strong>
+        <span>Institution</span>
+        <strong>CET Trivandrum</strong>
       </div>
       <div class="meta-item">
         <span>Role</span>
@@ -404,83 +440,137 @@
       </div>
       <div class="meta-item">
         <span>Year</span>
-        <strong>2024</strong>
+        <strong>November 2025</strong>
       </div>
     </div>
 
-    <!-- IMAGE -->
-    <div class="project-image">
-      <!-- Replace the placeholder below with an actual image tag once you have one: -->
-      <!-- <img src="images/autonomous-nav.jpg" alt="Autonomous Navigation Robot" /> -->
-      <div class="image-placeholder-icon">🤖</div>
-      <p class="image-placeholder-text">Add your project image here<br/>Replace this block with: &lt;img src="images/your-image.jpg" /&gt;</p>
-    </div>
+<div class="project-image">
+      <img src="images/pid_tracking.png" alt="PID Tracking" />
+      <img src="images/ctc_tracking.png" alt="CTC Tracking" />
+</div>
 
     <!-- OVERVIEW -->
     <div class="content-section">
       <h2>Overview</h2>
-      <p>
-        This project involved building a fully autonomous mobile robot capable of navigating unknown environments without any prior map knowledge. The robot uses a 2D LiDAR sensor to perceive its surroundings and constructs a map in real time using the GMapping SLAM algorithm.
-      </p>
-      <p>
-        All computation runs on a ROS1 Noetic stack. A custom C++ node handles the path planning logic using A* search on the occupancy grid published by the SLAM module, while a separate Python node manages obstacle avoidance with reactive control.
-      </p>
+      <p>This project investigates the trajectory tracking performance of a 2R (two-revolute joint) planar manipulator under two fundamentally different control philosophies: Proportional-Integral-Derivative (PID) control and Computed Torque Control (CTC).</p>
+      <p>The complete dynamic model was derived from first principles using Lagrangian mechanics, yielding the standard manipulator form with inertia matrix M(q), Coriolis/centrifugal matrix C(q,q̇), and gravity vector G(q). Simulations were run in MATLAB using the ODE45 solver to track sinusoidal reference trajectories over a 10-second window.</p>
+    </div>
+
+    <!-- CONTROL STRATEGIES -->
+    <div class="content-section">
+      <h2>Control Strategies Compared</h2>
+      <div class="two-col">
+        <div class="method-card">
+          <h3>PID Control (Model-Free)</h3>
+          <p>A reactive, model-free controller that uses only position error feedback — no knowledge of system dynamics is required. Gains were tuned iteratively: Kp = diag(500, 300), Kd = diag(50, 30), Ki = diag(10, 5).</p>
+        </div>
+        <div class="method-card">
+          <h3>Computed Torque Control (Model-Based)</h3>
+          <p>Uses feedback linearization to explicitly cancel the nonlinear dynamics of the manipulator, reducing the system to a simple linear second-order form. Gains designed for ωn = 10 rad/s and ζ = 0.8: Kp = diag(100, 100), Kd = diag(16, 16).</p>
+        </div>
+      </div>
     </div>
 
     <!-- KEY FEATURES -->
     <div class="content-section">
       <h2>Key Features</h2>
       <ul class="feature-list">
-        <li>Real-time SLAM using GMapping with 2D LiDAR for simultaneous localization and mapping</li>
-        <li>Custom A* path planner implemented as a ROS1 C++ node, subscribing to the occupancy grid</li>
-        <li>Reactive obstacle avoidance layer using potential fields to handle dynamic obstacles</li>
-        <li>Simulation tested in Gazebo before physical deployment on a differential drive robot</li>
-        <li>Modular ROS1 architecture with separate nodes for perception, planning, and control</li>
+        <li>Full dynamic model derived using Lagrangian mechanics — inertia, Coriolis, and gravity terms derived analytically</li>
+        <li>PID controller with integral windup prevention implemented and tuned iteratively</li>
+        <li>CTC controller based on feedback linearization, resulting in decoupled linear error dynamics</li>
+        <li>Sinusoidal reference trajectories: θ1d = sin(t), θ2d = cos(t) tracked over 10 seconds</li>
+        <li>Numerical integration using MATLAB ODE45 (Dormand-Prince) with tolerances of 10⁻⁶ and 10⁻⁸</li>
+        <li>Performance evaluated using RMSE, max error, steady-state error, settling time and control effort</li>
+        <li>Phase portrait and animation analysis to visualize controller behavior</li>
       </ul>
     </div>
 
     <!-- RESULTS -->
     <div class="content-section">
       <h2>Results</h2>
-      <p>The robot was tested across 5 different environments. Key performance metrics from the final evaluation:</p>
+      <p>CTC achieved approximately 97% reduction in tracking error compared to PID, with significantly faster settling and near-zero steady-state error.</p>
       <div class="results-grid">
         <div class="result-card">
-          <span class="result-value">92%</span>
-          <span class="result-label">Navigation Success Rate</span>
+          <span class="result-value">97%</span>
+          <span class="result-label">Error Reduction (CTC vs PID)</span>
         </div>
         <div class="result-card">
-          <span class="result-value">&lt;5cm</span>
-          <span class="result-label">Localization Error</span>
+          <span class="result-value">0.15s</span>
+          <span class="result-label">CTC Settling Time</span>
         </div>
         <div class="result-card">
-          <span class="result-value">0</span>
-          <span class="result-label">Collisions in Testing</span>
+          <span class="result-value">~0</span>
+          <span class="result-label">CTC Steady-State Error</span>
         </div>
       </div>
+
+      <table class="compare-table" style="margin-top: 1.5rem;">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>PID — Joint 1</th>
+            <th>PID — Joint 2</th>
+            <th>CTC — Joint 1</th>
+            <th>CTC — Joint 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RMSE (rad)</td>
+            <td>0.0523</td>
+            <td>0.0687</td>
+            <td class="better">0.0012</td>
+            <td class="better">0.0015</td>
+          </tr>
+          <tr>
+            <td>Max Error (rad)</td>
+            <td>0.1245</td>
+            <td>0.1532</td>
+            <td class="better">0.0034</td>
+            <td class="better">0.0041</td>
+          </tr>
+          <tr>
+            <td>Steady-State Error (rad)</td>
+            <td>0.0234</td>
+            <td>0.0312</td>
+            <td class="better">0.0001</td>
+            <td class="better">0.0002</td>
+          </tr>
+          <tr>
+            <td>Settling Time (s)</td>
+            <td>1.23</td>
+            <td>1.45</td>
+            <td class="better">0.15</td>
+            <td class="better">0.18</td>
+          </tr>
+          <tr>
+            <td>Control Effort (N·m·s)</td>
+            <td>145.6</td>
+            <td>98.3</td>
+            <td>152.3</td>
+            <td>102.1</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- CHALLENGES -->
     <div class="content-section">
       <h2>Challenges & Learnings</h2>
-      <p>
-        One of the main challenges was tuning the costmap inflation radius to balance between safe clearance from obstacles and allowing the robot to navigate narrow corridors. Too large an inflation value caused the planner to fail in tight spaces.
-      </p>
-      <p>
-        Another challenge was latency between the LiDAR scan and the costmap update — solved by optimizing the ROS node update rates and reducing unnecessary message publishing frequency.
-      </p>
+      <p>The main challenge with PID was that it could not compensate for configuration-dependent dynamics — the inertia, Coriolis forces, and gravity all change with the manipulator's pose, causing persistent phase lag and tracking error.</p>
+      <p>For CTC, the key insight was that its performance is highly sensitive to model accuracy. Perfect cancellation of nonlinearities is only achievable when the model exactly matches the real system. In practice, model uncertainties would degrade CTC performance, suggesting the need for robust or adaptive variants for real-world deployment.</p>
+      <p>PID, while less accurate, proved more robust to such uncertainties — making the trade-off between performance and robustness a central finding of this study.</p>
     </div>
 
-    <!-- LINKS -->
     <div class="project-links">
-      <a href="https://github.com/yourusername/autonomous-nav" class="btn primary" target="_blank">⌥ View on GitHub</a>
+      <a href="https://github.com/AswathyAryappattu/trajectory-tracking-matlab" class="btn primary" target="_blank">⌥ View on GitHub</a>
       <a href="index.html" class="btn">← Back to Portfolio</a>
     </div>
 
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    <span>© 2026 Your Name</span>
+    <span>© 2026 Aswathy A S</span>
     <span>Built with HTML · Hosted on GitHub Pages</span>
   </footer>
 
